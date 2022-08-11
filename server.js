@@ -88,16 +88,18 @@ io.on('connection',async(socket)=>{
     })
 })
 
-const select = {
-    alias: {
-        "p": "PORT"
-    },
-    default: {
-        "PORT": 8080
-    }
-};
+// const select = {
+//     alias: {
+//         "p": "PORT"
+//     },
+//     default: {
+//         "PORT": 8080
+//     }
+// };
 
-const { PORT } = minimist(process.argv, select);
+//const { PORT } = minimist(process.argv, select);
+
+const PORT = process.env.PORT || 8080;
 
 const server = app.listen(PORT, () => {
     //logger.info(`Servidor escuchando puerto ${PORT}`)
